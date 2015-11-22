@@ -28,7 +28,7 @@ Subset data according 2 conditions above.
 
 
 ###3.Uses descriptive activity names to name the activities in the data set
-Convert activity to factor and change values of factors to descriptive.
+Convert activity to factor and change values of factors to descriptive ones. 
 
 
 ###4.Appropriately labels the data set with descriptive variable names. 
