@@ -30,7 +30,7 @@ The data to be processed  is stored into various files
 
 - 'test/y_test.txt': Test labels.
 
-- 'train/subject_train.txt': 
+- 'train/subject_train.txt': Subjects
 - 
 - Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 Information about the subject and activity(stored on separate files) is matchet to train/test data. After extending with these test and train files are merged into one. After finding the mean and std columns the data is restricted and summarized.
