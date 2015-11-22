@@ -1,10 +1,10 @@
 # Getting-Clearing-Data Course Project
 Description of run_analysis.R script
 
-This script reads the data from wd, combine the files the files according project requirements and creates a tidy data set with averages of the selected coulumns, grouped by subjects and activities.
+This script reads the data from wd, combine the files  according project requirements and creates a tidy data set with averages of the selected coulumns, grouped by subjects and activities.
 
 Precondition
-library to be installed:data.table
+library to be installed: data.table
 
 
 ##Program flow
