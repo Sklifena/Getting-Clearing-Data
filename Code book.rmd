@@ -1,54 +1,90 @@
 title: "Codebook template"
-author: "Your name here"
-date: "The date here"
+author: Sklifena
+date: 2015.11.22
 output:
   html_document:
     keep_md: yes
 ---
 
 ## Project Description
-Short description of the project
+The experiments have been carried out with a group of 30 volunteers. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone .Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+After mearging the test and tarain data the mean() and std() coulumns have been selected. The data is devided by grouping on subjest and activity pair and  summary prepared on coloumn avariges. 
 
-##Study design and data processing
 
 ###Collection of the raw data
-Description of how the data was collected.
-
-###Notes on the original (raw) data 
-Some additional notes (if avaialble, otherwise you can leave this section out).
-
-##Creating the tidy datafile
-
-###Guide to create the tidy data file
-Description on how to create the tidy data file (1. download the data, ...)/
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
 
 ###Cleaning of the data
-Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
+The data to be processed  is stored into various files
+- 'features_info.txt': Shows information about the variables used on the feature vector.
 
-##Description of the variables in the tiny_data.txt file
-General description of the file including:
- - Dimensions of the dataset
- - Summary of the data
- - Variables present in the dataset
+- 'features.txt': List of all features.
 
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
+- 'activity_labels.txt': Links the class labels with their activity name.
 
-###Variable 1 (repeat this section for all variables in the dataset)
-Short description of what the variable describes.
+- 'train/X_train.txt': Training set.
 
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
+- 'train/y_train.txt': Training labels.
 
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
+- 'test/X_test.txt': Test set.
 
-####Notes on variable 1:
-If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
+- 'test/y_test.txt': Test labels.
 
-##Sources
-Sources you used if any, otherise leave out.
+- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+Information about the subject and activity(stored on separate files) is matchet to train/test data. After extending with these test and train files are merged into one. After finding the mean and std columns the data is restricted and summarized.
+Tidy data shows the average (selected) column values for each subject activity pair.
+The result is stored in text file :step5.txt
 
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again)
+##Description of the variables in the step5.txt file
+The tiny data set is saved in step5.txt file without coloumn names,
+[1] "activity"                         "subject"                        
+ [3] "tBodyAcc.mean...X"               "tBodyAcc.mean...Y"              
+ [5] "tBodyAcc.mean...Z"               "tGravityAcc.mean...X"           
+ [7] "tGravityAcc.mean...Y"            "tGravityAcc.mean...Z"           
+ [9] "tBodyAccJerk.mean...X"           "tBodyAccJerk.mean...Y"          
+[11] "tBodyAccJerk.mean...Z"           "tBodyGyro.mean...X"             
+[13] "tBodyGyro.mean...Y"              "tBodyGyro.mean...Z"             
+[15] "tBodyGyroJerk.mean...X"          "tBodyGyroJerk.mean...Y"         
+[17] "tBodyGyroJerk.mean...Z"          "tBodyAccMag.mean.."             
+[19] "tGravityAccMag.mean.."           "tBodyAccJerkMag.mean.."         
+[21] "tBodyGyroMag.mean.."             "tBodyGyroJerkMag.mean.."        
+[23] "fBodyAcc.mean...X"               "fBodyAcc.mean...Y"              
+[25] "fBodyAcc.mean...Z"               "fBodyAcc.meanFreq...X"          
+[27] "fBodyAcc.meanFreq...Y"           "fBodyAcc.meanFreq...Z"          
+[29] "fBodyAccJerk.mean...X"           "fBodyAccJerk.mean...Y"          
+[31] "fBodyAccJerk.mean...Z"           "fBodyAccJerk.meanFreq...X"      
+[33] "fBodyAccJerk.meanFreq...Y"       "fBodyAccJerk.meanFreq...Z"      
+[35] "fBodyGyro.mean...X"              "fBodyGyro.mean...Y"             
+[37] "fBodyGyro.mean...Z"              "fBodyGyro.meanFreq...X"         
+[39] "fBodyGyro.meanFreq...Y"          "fBodyGyro.meanFreq...Z"         
+[41] "fBodyAccMag.mean.."              "fBodyAccMag.meanFreq.."         
+[43] "fBodyBodyAccJerkMag.mean.."      "fBodyBodyAccJerkMag.meanFreq.." 
+[45] "fBodyBodyGyroMag.mean.."         "fBodyBodyGyroMag.meanFreq.."    
+[47] "fBodyBodyGyroJerkMag.mean.."     "fBodyBodyGyroJerkMag.meanFreq.."
+[49] "tBodyAcc.std...X"                "tBodyAcc.std...Y"               
+[51] "tBodyAcc.std...Z"                "tGravityAcc.std...X"            
+[53] "tGravityAcc.std...Y"             "tGravityAcc.std...Z"            
+[55] "tBodyAccJerk.std...X"            "tBodyAccJerk.std...Y"           
+[57] "tBodyAccJerk.std...Z"            "tBodyGyro.std...X"              
+[59] "tBodyGyro.std...Y"               "tBodyGyro.std...Z"              
+[61] "tBodyGyroJerk.std...X"           "tBodyGyroJerk.std...Y"          
+[63] "tBodyGyroJerk.std...Z"           "tBodyAccMag.std.."              
+[65] "tGravityAccMag.std.."            "tBodyAccJerkMag.std.."          
+[67] "tBodyGyroMag.std.."              "tBodyGyroJerkMag.std.."         
+[69] "fBodyAcc.std...X"                "fBodyAcc.std...Y"               
+[71] "fBodyAcc.std...Z"                "fBodyAccJerk.std...X"           
+[73] "fBodyAccJerk.std...Y"            "fBodyAccJerk.std...Z"           
+[75] "fBodyGyro.std...X"               "fBodyGyro.std...Y"              
+[77] "fBodyGyro.std...Z"               "fBodyAccMag.std.."              
+[79] "fBodyBodyAccJerkMag.std.."       "fBodyBodyGyroMag.std.."         
+[81] "fBodyBodyGyroJerkMag.std.."
+ 
+Rows: 180
+Coloumns:81
+ 
+
+
+
+
+
+
