@@ -31,11 +31,13 @@ The data to be processed  is stored into various files
 - 'test/y_test.txt': Test labels.
 
 - 'train/subject_train.txt': Subjects
-- 
-- Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+ 
+ Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 Information about the subject and activity(stored on separate files) is matchet to train/test data. After extending with these test and train files are merged into one. After finding the mean and std columns the data is restricted and summarized.
 Tidy data shows the average (selected) column values for each subject activity pair.
 The result is stored in text file :step5.txt
+
+
 https://s3.amazonaws.com/coursera-uploads/user-b79f2734b7db4db8306db2ae/975118/asst-3/ee3c5de0914611e5944a952ff45499cb.txt
 
 ##Description of the variables in the step5.txt file
